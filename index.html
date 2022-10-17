@@ -16,12 +16,14 @@
             <div class="row p-4">
                 <div id="player" style="width: 550px;">
                     <main></main>
-                    <div id="control">
-                        <button id="play">▷</button>
+                    <div id="control" class="d-none">
+                        <button id="play-button">▷</button>
                         <input type="range" id="progress" value="0">
                     </div>
                 </div>
-                <div id="ui">
+                <div id="ui" class="d-none">
+                    <h4 class="text-center">PARAMETERS</h4>
+
                     <span>Display Mode:</span>
                     <select class="form-control" id="mode-select">
                         <option>Circular Display</option>
@@ -46,13 +48,22 @@
                     <span>History Count: </span>
                     <input type="number" class="d-block" id="history-input" min="1" max="50" value="10">
                 </div>
+
+                <div id="start-audio">
+                    <span class="text-white mb-4">Welcome to <span class="text-danger">3D</span> music visualizer.</span>
+                    <span style="font-size: 5rem;" class="mb-4">🔊</span>
+                    <span class="text-white mb-4">Press the <span class="text-danger">red button</span> to enable audio use!</span>
+                    <button class="btn btn-danger" id="start-app">Enable Audio</button>
+                </div>
             </div>
         </div>
     </div>
-
+    
     <script src="./Normalizer.js"></script>
     <script src="./History.js"></script>
     <script src="./index.js"></script>
     <script src="./sketch.js"></script>
+
+    <script> document.getElementById('start-app').addEventListener('click', ()=>{initApp(); setTimeout(()=>{frameRate(60);}, 250)}) </script>
   </body>
 </html>

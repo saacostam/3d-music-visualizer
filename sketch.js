@@ -2,6 +2,8 @@ function setup() {
     createCanvas(550, 550, WEBGL);
     angleMode(DEGREES);
     colorMode(RGB, 1);
+
+    frameRate(0);
 }
 
 function paintCircle(dataArray, r, iter){
@@ -51,7 +53,7 @@ function paintLinear(dataArray, r, iter){
         
         push();
         translate(x, y, z);
-        box(5, y, 5);
+        box(10, y, 10);
         // vertex(x, y, z);
         pop();
     }
@@ -59,24 +61,26 @@ function paintLinear(dataArray, r, iter){
 }
 
 function draw() {
-    background(0);
-    orbitControl();
-    noStroke();
-
-    translate(0, 100, 0);
-
-    const myDataArray = normalizer.getData();
-    history.add(myDataArray);
-
-    const n = history.history.length;
-    for (let i = 0; i < n; i++){
-        push();
-
-        if (MODE === 'CIRCLE'){
-            paintCircle(history.history[i], DISTANCE*(i+1), i); 
-        }else if(MODE == 'LINEAR'){
-            paintLinear(history.history[i], DISTANCE*(i+1), i);
+    if (STARTED === true){
+        background(0);
+        orbitControl();
+        noStroke();
+    
+        translate(0, 100, 0);
+    
+        const myDataArray = normalizer.getData();
+        history.add(myDataArray);
+    
+        const n = history.history.length;
+        for (let i = 0; i < n; i++){
+            push();
+    
+            if (MODE === 'CIRCLE'){
+                paintCircle(history.history[i], DISTANCE*(i+1), i); 
+            }else if(MODE == 'LINEAR'){
+                paintLinear(history.history[i], DISTANCE*(i+1), i);
+            }
+            pop();
         }
-        pop();
     }
 }

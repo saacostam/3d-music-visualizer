@@ -34,14 +34,14 @@ main{
     display: flex;
     flex-direction: row;
 }
-#play{
+#play-button{
     border: none;
     background-color: transparent;
     color: white;
     border-radius: 50%;
     user-select: none;
 }
-#play:focus{
+#play-button:focus{
     border: none;
     outline: none;
 }
@@ -63,4 +63,11 @@ main{
 #ui *{
     margin-bottom: 1rem;
     color: white;
+}
+#start-audio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
 }
