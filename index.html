@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cosmo/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <nav><a href="#" id="brand-name">3D MUSIC VISUALIZER</a></nav>
+
+    <div class="pl-4 pr-4">
+        <div class="container-fluid" id="main-frame">
+            <div class="row p-4">
+                <div id="player" style="width: 550px;">
+                    <main></main>
+                    <div id="control">
+                        <button id="play">▷</button>
+                        <input type="range" id="progress" value="0">
+                    </div>
+                </div>
+                <div id="ui">
+                    <span>Display Mode:</span>
+                    <select class="form-control" id="mode-select">
+                        <option>Circular Display</option>
+                        <option>Linear Display</option>
+                    </select>
+
+                    <span>Scale Mode: </span>
+                    <select class="form-control" id="scale-select">
+                        <option>Linear Scale</option>
+                        <option>Logarithmic Scale</option>
+                    </select>
+
+                    <span>Level of Detail: </span>
+                    <select class="form-control" id="detail-select">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>4</option>
+                        <option>8</option>
+                        <option>16</option>
+                    </select>
+
+                    <span>History Count: </span>
+                    <input type="number" class="d-block" id="history-input" min="1" max="50" value="10">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Normalizer.js"></script>
+    <script src="./History.js"></script>
+    <script src="./index.js"></script>
+    <script src="./sketch.js"></script>
+  </body>
+</html>

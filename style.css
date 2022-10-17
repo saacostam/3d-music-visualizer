@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+
+*{
+    font-family: 'Rajdhani', sans-serif;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+canvas {
+    display: block;
+    border-radius: 2rem;
+    border: 1px solid white;
+}
+nav{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+}
+#brand-name{
+    color: white;
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+#main-frame{
+    padding: 0;
+}
+main{
+    margin-bottom: 1rem;
+}
+#control{
+    display: flex;
+    flex-direction: row;
+}
+#play{
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-radius: 50%;
+    user-select: none;
+}
+#play:focus{
+    border: none;
+    outline: none;
+}
+#progress{
+    flex: 1;
+}
+#ui{
+    padding: 0 2rem;
+    flex: 1;
+}
+#ui select, #ui input{
+    background-color: black;
+    color: white;
+}
+#ui select::after, #ui option{
+    background-color: black;
+    color: white;
+}
+#ui *{
+    margin-bottom: 1rem;
+    color: white;
+}
