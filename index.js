@@ -88,6 +88,11 @@ function initApp(){
         history.updateLen( HISTORY_COUNT );
     })
 
+    const detailInput = document.getElementById('distance-input');
+    detailInput.addEventListener('input', (e)=>{
+        DISTANCE = Number(e.target.value);
+    })
+
     // Update UI
     const uiDiv = document.getElementById('ui');
     uiDiv.classList.remove('d-none');
