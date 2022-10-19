@@ -1,7 +1,7 @@
 let STARTED = false;
 let HISTORY_COUNT = 10;
 let MAX_FREQ_BUFFER = 256;
-let DETAIL = 1;
+let DETAIL = 4;
 let MODE = 'CIRCLE';
 let DISTANCE = 100;
 
@@ -13,7 +13,7 @@ function initApp(){
     // CONFIG
     HISTORY_COUNT = 10;
     MAX_FREQ_BUFFER = 256;
-    DETAIL = 1;
+    DETAIL = 4;
     MODE = 'CIRCLE';
     DISTANCE = 100;
 
@@ -77,6 +77,7 @@ function initApp(){
     })
 
     const detailSelect = document.getElementById('detail-select');
+    detailSelect.value = DETAIL;
     detailSelect.addEventListener('input', (e)=>{
         DETAIL = Number( e.target.value );
     })
