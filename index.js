@@ -32,6 +32,10 @@ function initApp(){
         audioProgress.value = currentTime;
     }
 
+    audio.oncanplay = (e) => {
+        audio.play();
+    }
+
     audio.src = "https://raw.githubusercontent.com/saacostam/music-visualizer/master/music/Armin Van Buuren (Lost Frequencies 2.0 Remix) - In And Out Of Love.mp3";
     audio.currentTime = 0;
 
