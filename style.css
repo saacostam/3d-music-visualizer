@@ -83,3 +83,6 @@ main{
     align-items: center;
 
 }
+.d-none input[type="file"]{
+    display: none;
+}

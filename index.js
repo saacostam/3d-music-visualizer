@@ -93,6 +93,15 @@ function initApp(){
         DISTANCE = Number(e.target.value);
     })
 
+    const fileInput = document.getElementById('file-input');
+    fileInput.onchange = function(e){
+        audio.src = URL.createObjectURL(this.files[0]);
+
+        audio.onend = function(e) {
+            URL.revokeObjectURL(this.src);
+        }
+    }
+
     // Update UI
     const uiDiv = document.getElementById('ui');
     uiDiv.classList.remove('d-none');
